@@ -366,6 +366,43 @@ main { padding: 28px 0 56px; }
   .search-result-card h3 { font-size: 18px; }
 }
 
+
+/* === LATEST NEWS WITH LEFT IMAGE === */
+.latest-item--media {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.latest-item__thumb {
+  display: block;
+  width: 100%;
+  min-height: 118px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg);
+}
+.latest-item__thumb img {
+  width: 100%;
+  height: 100%;
+  min-height: 118px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+.latest-item__body { min-width: 0; }
+@media (max-width: 768px) {
+  .latest-item--media { grid-template-columns: 112px minmax(0, 1fr); gap: 14px; }
+  .latest-item__thumb,
+  .latest-item__thumb img { min-height: 96px; }
+  .latest-item--media p { display: none; }
+}
+@media (max-width: 460px) {
+  .latest-item--media { grid-template-columns: 88px minmax(0, 1fr); gap: 12px; padding: 18px; }
+  .latest-item__thumb,
+  .latest-item__thumb img { min-height: 82px; }
+  .latest-item--media h3 { font-size: 15px; }
+}
+
 </style>
 </head>
 <body>
@@ -568,88 +605,148 @@ main { padding: 28px 0 56px; }
 
     
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Cambio Climático</div>
-      <h3><a href="https://elnuevodiario.com.do/los-cientificos-alertan-de-una-aceleracion-del-calentamiento-global-y-de-la-subida-del-nivel-del-mar/" target="_blank" rel="noopener">Los científicos alertan de una aceleración del calentamiento global y de la subida del nivel del mar</a></h3>
-      <p>... Acuerdo de París de 2015. Sin una reducción en el ritmo de las emisiones, este umbral se alcanzará hacia 2030, estiman. «Dado que las emisiones de ...</p>
-      <div class="meta">11 jun 2026 · elnuevodiario.com.do</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://elnuevodiario.com.do/los-cientificos-alertan-de-una-aceleracion-del-calentamiento-global-y-de-la-subida-del-nivel-del-mar/" target="_blank" rel="noopener" aria-label="Los científicos alertan de una aceleración del calentamiento global y de la subida del nivel del mar">
+        <img src="data:image/svg+xml,%0A%20%20%20%20%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%201280%20720%27%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%231c2535%27/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2755%25%27%20stop-color%3D%27%232d6a4f%27/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23e05535%27/%3E%0A%20%20%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%20%20%3C/defs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%271280%27%20height%3D%27720%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27145%27%20font-family%3D%27Arial%2C%20sans-serif%27%20font-size%3D%2740%27%20fill%3D%27rgba%28255%2C255%2C255%2C.78%29%27%3ENoticias%20del%20Sector%3C/text%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27285%27%20font-family%3D%27Georgia%2C%20serif%27%20font-size%3D%2768%27%20fill%3D%27%23fff%27%3ECambio%20Clim%C3%A1tico%3C/text%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27385%27%20font-family%3D%27Arial%2C%20sans-serif%27%20font-size%3D%2734%27%20fill%3D%27rgba%28255%2C255%2C255%2C.84%29%27%3ELos%20cient%C3%ADficos%20alertan%20de%20una%20aceleraci%C3%B3n%20del%20calentamiento%20gl%E2%80%A6%3C/text%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Los científicos alertan de una aceleración del calentamiento global y de la subida del nivel del mar" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Cambio Climático</div>
+        <h3><a href="https://elnuevodiario.com.do/los-cientificos-alertan-de-una-aceleracion-del-calentamiento-global-y-de-la-subida-del-nivel-del-mar/" target="_blank" rel="noopener">Los científicos alertan de una aceleración del calentamiento global y de la subida del nivel del mar</a></h3>
+        <p>... Acuerdo de París de 2015. Sin una reducción en el ritmo de las emisiones, este umbral se alcanzará hacia 2030, estiman. «Dado que las emisiones de ...</p>
+        <div class="meta">11 jun 2026 · elnuevodiario.com.do</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Transición Energética</div>
-      <h3><a href="https://primerplanoonline.com.ar/moreno-lanzo-el-primer-censo-industrial-municipal-para-el-diseno-de-politicas-publicas/" target="_blank" rel="noopener">Moreno lanzó el primer Censo Industrial Municipal</a></h3>
-      <p>... transición energética, adaptarse a los desafíos tecnológicos y continuar como fuente de empleo para la comunidad”. 11/06/2026. Censo Industrial en ...</p>
-      <div class="meta">11 jun 2026 · primerplanoonline.com.ar</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://primerplanoonline.com.ar/moreno-lanzo-el-primer-censo-industrial-municipal-para-el-diseno-de-politicas-publicas/" target="_blank" rel="noopener" aria-label="Moreno lanzó el primer Censo Industrial Municipal">
+        <img src="https://img.youtube.com/vi/ElqPvguKJK0/default.jpg" alt="Moreno lanzó el primer Censo Industrial Municipal" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Transición Energética</div>
+        <h3><a href="https://primerplanoonline.com.ar/moreno-lanzo-el-primer-censo-industrial-municipal-para-el-diseno-de-politicas-publicas/" target="_blank" rel="noopener">Moreno lanzó el primer Censo Industrial Municipal</a></h3>
+        <p>... transición energética, adaptarse a los desafíos tecnológicos y continuar como fuente de empleo para la comunidad”. 11/06/2026. Censo Industrial en ...</p>
+        <div class="meta">11 jun 2026 · primerplanoonline.com.ar</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Transición Energética</div>
-      <h3><a href="https://www.lineasindical.com.ar/mario-lavia-critic-falta-inversiones-petroleras-inversiones-actividad-convencional-futuro-para-empleo-petrolero-n-1762675.html" target="_blank" rel="noopener">Sin inversiones en la actividad convencional no hay futuro para el empleo petrolero - Linea Sindical</a></h3>
-      <p>... para preservar el empleo, impulsar el desarrollo regional y garantizar una transición energética que no deje trabajadores atrás.</p>
-      <div class="meta">11 jun 2026 · lineasindical.com.ar</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://www.lineasindical.com.ar/mario-lavia-critic-falta-inversiones-petroleras-inversiones-actividad-convencional-futuro-para-empleo-petrolero-n-1762675.html" target="_blank" rel="noopener" aria-label="Sin inversiones en la actividad convencional no hay futuro para el empleo petrolero - Linea Sindical">
+        <img src="https://static.treslineas.com.ar/foto/nota-1762675-mario-lavia-critic-falta-inversiones-petroleras-inversiones-actividad-convencional-futuro-para-empleo-petrolero-1113764.jpg?imgres=2000x2000x80" alt="Sin inversiones en la actividad convencional no hay futuro para el empleo petrolero - Linea Sindical" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Transición Energética</div>
+        <h3><a href="https://www.lineasindical.com.ar/mario-lavia-critic-falta-inversiones-petroleras-inversiones-actividad-convencional-futuro-para-empleo-petrolero-n-1762675.html" target="_blank" rel="noopener">Sin inversiones en la actividad convencional no hay futuro para el empleo petrolero - Linea Sindical</a></h3>
+        <p>... para preservar el empleo, impulsar el desarrollo regional y garantizar una transición energética que no deje trabajadores atrás.</p>
+        <div class="meta">11 jun 2026 · lineasindical.com.ar</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Seguridad de Instalaciones</div>
-      <h3><a href="https://surtidores.com.ar/una-nueva-marca-de-surtidores-desembarca-en-el-pais-de-la-mano-de-bertotto-boglione/" target="_blank" rel="noopener">Una nueva marca de surtidores desembarca en el país de la mano de Bertotto Boglione</a></h3>
-      <p>La participación de Bertotto Boglione en la Cumbre de Estaciones de Servicio estuvo marcada por una fuerte apuesta al crecimiento y la ...</p>
-      <div class="meta">11 jun 2026 · surtidores.com.ar</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://surtidores.com.ar/una-nueva-marca-de-surtidores-desembarca-en-el-pais-de-la-mano-de-bertotto-boglione/" target="_blank" rel="noopener" aria-label="Una nueva marca de surtidores desembarca en el país de la mano de Bertotto Boglione">
+        <img src="https://surtidores.com.ar/wp-content/themes/surtidores-2025/assets/images/banner-surtidores-overlay.png" alt="Una nueva marca de surtidores desembarca en el país de la mano de Bertotto Boglione" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Seguridad de Instalaciones</div>
+        <h3><a href="https://surtidores.com.ar/una-nueva-marca-de-surtidores-desembarca-en-el-pais-de-la-mano-de-bertotto-boglione/" target="_blank" rel="noopener">Una nueva marca de surtidores desembarca en el país de la mano de Bertotto Boglione</a></h3>
+        <p>La participación de Bertotto Boglione en la Cumbre de Estaciones de Servicio estuvo marcada por una fuerte apuesta al crecimiento y la ...</p>
+        <div class="meta">11 jun 2026 · surtidores.com.ar</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Seguridad de Instalaciones</div>
-      <h3><a href="https://surtidores.com.ar/las-estaciones-de-servicio-buscan-mejorar-su-caja-y-aprender-a-financiar-capital-de-trabajo-sin-depender-solo-del-banco/" target="_blank" rel="noopener">Las Estaciones de Servicio buscan mejorar su caja y aprender a financiar capital de trabajo ...</a></h3>
-      <p>CAPACITACIÓN GNC/GLP LEGISLACIÓN SEGURIDAD E HIGIENE LUBRICANTES MOVILIDAD SUSTENTABLE CONTACTO ... Las Estaciones de Servicio buscan mejorar su caja y ...</p>
-      <div class="meta">11 jun 2026 · surtidores.com.ar</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://surtidores.com.ar/las-estaciones-de-servicio-buscan-mejorar-su-caja-y-aprender-a-financiar-capital-de-trabajo-sin-depender-solo-del-banco/" target="_blank" rel="noopener" aria-label="Las Estaciones de Servicio buscan mejorar su caja y aprender a financiar capital de trabajo ...">
+        <img src="https://surtidores.com.ar/wp-content/themes/surtidores-2025/assets/images/banner-surtidores-overlay.png" alt="Las Estaciones de Servicio buscan mejorar su caja y aprender a financiar capital de trabajo ..." loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Seguridad de Instalaciones</div>
+        <h3><a href="https://surtidores.com.ar/las-estaciones-de-servicio-buscan-mejorar-su-caja-y-aprender-a-financiar-capital-de-trabajo-sin-depender-solo-del-banco/" target="_blank" rel="noopener">Las Estaciones de Servicio buscan mejorar su caja y aprender a financiar capital de trabajo ...</a></h3>
+        <p>CAPACITACIÓN GNC/GLP LEGISLACIÓN SEGURIDAD E HIGIENE LUBRICANTES MOVILIDAD SUSTENTABLE CONTACTO ... Las Estaciones de Servicio buscan mejorar su caja y ...</p>
+        <div class="meta">11 jun 2026 · surtidores.com.ar</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Seguridad de Instalaciones</div>
-      <h3><a href="https://surtidores.com.ar/capacitarse-en-inteligencia-emocional-una-tendencia-que-llega-al-negocio-de-las-estaciones-de-servicio/" target="_blank" rel="noopener">Capacitarse en inteligencia emocional: una tendencia que llega al negocio de las ... - Surtidores</a></h3>
-      <p>Capacitarse en inteligencia emocional: una tendencia que llega al negocio de las Estaciones de Servicio ... seguridad hasta la gestión administrativa y ...</p>
-      <div class="meta">11 jun 2026 · surtidores.com.ar</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://surtidores.com.ar/capacitarse-en-inteligencia-emocional-una-tendencia-que-llega-al-negocio-de-las-estaciones-de-servicio/" target="_blank" rel="noopener" aria-label="Capacitarse en inteligencia emocional: una tendencia que llega al negocio de las ... - Surtidores">
+        <img src="https://surtidores.com.ar/wp-content/themes/surtidores-2025/assets/images/banner-surtidores-overlay.png" alt="Capacitarse en inteligencia emocional: una tendencia que llega al negocio de las ... - Surtidores" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Seguridad de Instalaciones</div>
+        <h3><a href="https://surtidores.com.ar/capacitarse-en-inteligencia-emocional-una-tendencia-que-llega-al-negocio-de-las-estaciones-de-servicio/" target="_blank" rel="noopener">Capacitarse en inteligencia emocional: una tendencia que llega al negocio de las ... - Surtidores</a></h3>
+        <p>Capacitarse en inteligencia emocional: una tendencia que llega al negocio de las Estaciones de Servicio ... seguridad hasta la gestión administrativa y ...</p>
+        <div class="meta">11 jun 2026 · surtidores.com.ar</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Cambio Climático</div>
-      <h3><a href="https://www.europapress.es/comunitat-valenciana/noticia-estudio-ia-participado-upv-ua-detecta-grandes-desigualdades-planes-climaticos-mundiales-20260611113958.html" target="_blank" rel="noopener">Un estudio con IA participado por la UPV y la UA detecta grandes desigualdades en planes ...</a></h3>
-      <p>... Acuerdo de París. Para ello, se han utilizado modelos avanzados de inteligencia artificial generativa capaces de identificar conexiones entre las ...</p>
-      <div class="meta">11 jun 2026 · europapress.es</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://www.europapress.es/comunitat-valenciana/noticia-estudio-ia-participado-upv-ua-detecta-grandes-desigualdades-planes-climaticos-mundiales-20260611113958.html" target="_blank" rel="noopener" aria-label="Un estudio con IA participado por la UPV y la UA detecta grandes desigualdades en planes ...">
+        <img src="https://img.europapress.es/fotoweb/fotonoticia_20260611113958_1200.jpg" alt="Un estudio con IA participado por la UPV y la UA detecta grandes desigualdades en planes ..." loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Cambio Climático</div>
+        <h3><a href="https://www.europapress.es/comunitat-valenciana/noticia-estudio-ia-participado-upv-ua-detecta-grandes-desigualdades-planes-climaticos-mundiales-20260611113958.html" target="_blank" rel="noopener">Un estudio con IA participado por la UPV y la UA detecta grandes desigualdades en planes ...</a></h3>
+        <p>... Acuerdo de París. Para ello, se han utilizado modelos avanzados de inteligencia artificial generativa capaces de identificar conexiones entre las ...</p>
+        <div class="meta">11 jun 2026 · europapress.es</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Cambio Climático</div>
-      <h3><a href="https://www.informacion.es/alicante/2026/06/11/catedratico-javier-garcia-martinez-participa-estudio-ia-planes-climaticos-universidad-alicante-131274639.html" target="_blank" rel="noopener">El catedrático Javier García Martínez participa en un estudio con IA que detecta grandes ...</a></h3>
-      <p>Los países con mayores ingresos priorizan compromisos relacionados con la salud y los retos globales, y los de renta más baja fijan estrategias ...</p>
-      <div class="meta">11 jun 2026 · informacion.es</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://www.informacion.es/alicante/2026/06/11/catedratico-javier-garcia-martinez-participa-estudio-ia-planes-climaticos-universidad-alicante-131274639.html" target="_blank" rel="noopener" aria-label="El catedrático Javier García Martínez participa en un estudio con IA que detecta grandes ...">
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/574bdf88-e844-4a6a-b431-1c4a51ca558f_16-9-discover-aspect-ratio_default_0.jpg" alt="El catedrático Javier García Martínez participa en un estudio con IA que detecta grandes ..." loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Cambio Climático</div>
+        <h3><a href="https://www.informacion.es/alicante/2026/06/11/catedratico-javier-garcia-martinez-participa-estudio-ia-planes-climaticos-universidad-alicante-131274639.html" target="_blank" rel="noopener">El catedrático Javier García Martínez participa en un estudio con IA que detecta grandes ...</a></h3>
+        <p>Los países con mayores ingresos priorizan compromisos relacionados con la salud y los retos globales, y los de renta más baja fijan estrategias ...</p>
+        <div class="meta">11 jun 2026 · informacion.es</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Transición Energética</div>
-      <h3><a href="https://prensa.mendoza.gob.ar/nuestro-suelo-maravillas-minerales-de-mendoza-inicia-su-tercera-edicion-y-amplia-la-convocatoria-a-profesionales/" target="_blank" rel="noopener">“Nuestro Suelo, Maravillas Minerales de Mendoza” inicia su tercera edición y amplía la ...</a></h3>
-      <p>... transición energética y al desarrollo provincial. “Esta iniciativa tiene por objeto llevar más conocimientos a los docentes y profesionales para ...</p>
-      <div class="meta">11 jun 2026 · prensa.mendoza.gob.ar</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://prensa.mendoza.gob.ar/nuestro-suelo-maravillas-minerales-de-mendoza-inicia-su-tercera-edicion-y-amplia-la-convocatoria-a-profesionales/" target="_blank" rel="noopener" aria-label="“Nuestro Suelo, Maravillas Minerales de Mendoza” inicia su tercera edición y amplía la ...">
+        <img src="data:image/svg+xml,%0A%20%20%20%20%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%201280%20720%27%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%231c2535%27/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2755%25%27%20stop-color%3D%27%232d6a4f%27/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23e05535%27/%3E%0A%20%20%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%20%20%3C/defs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%271280%27%20height%3D%27720%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27145%27%20font-family%3D%27Arial%2C%20sans-serif%27%20font-size%3D%2740%27%20fill%3D%27rgba%28255%2C255%2C255%2C.78%29%27%3ENoticias%20del%20Sector%3C/text%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27285%27%20font-family%3D%27Georgia%2C%20serif%27%20font-size%3D%2768%27%20fill%3D%27%23fff%27%3ETransici%C3%B3n%20Energ%C3%A9tica%3C/text%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27385%27%20font-family%3D%27Arial%2C%20sans-serif%27%20font-size%3D%2734%27%20fill%3D%27rgba%28255%2C255%2C255%2C.84%29%27%3E%E2%80%9CNuestro%20Suelo%2C%20Maravillas%20Minerales%20de%20Mendoza%E2%80%9D%20inicia%20su%20terc%E2%80%A6%3C/text%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="“Nuestro Suelo, Maravillas Minerales de Mendoza” inicia su tercera edición y amplía la ..." loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Transición Energética</div>
+        <h3><a href="https://prensa.mendoza.gob.ar/nuestro-suelo-maravillas-minerales-de-mendoza-inicia-su-tercera-edicion-y-amplia-la-convocatoria-a-profesionales/" target="_blank" rel="noopener">“Nuestro Suelo, Maravillas Minerales de Mendoza” inicia su tercera edición y amplía la ...</a></h3>
+        <p>... transición energética y al desarrollo provincial. “Esta iniciativa tiene por objeto llevar más conocimientos a los docentes y profesionales para ...</p>
+        <div class="meta">11 jun 2026 · prensa.mendoza.gob.ar</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Cambio Climático</div>
-      <h3><a href="https://www.servimedia.es/noticias/tierra-acumula-calor-ritmo-acelerado-1-37-grados-mas-2025/1412977161" target="_blank" rel="noopener">La Tierra acumula calor a un “ritmo acelerado” con 1,37 grados más en 2025 - Servimedia</a></h3>
-      <p>... Acuerdo de París para evitar los peores impactos del cambio climático. Acceso clientes. Para acceder a la mayoría de las noticias, debes ser ...</p>
-      <div class="meta">11 jun 2026 · servimedia.es</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://www.servimedia.es/noticias/tierra-acumula-calor-ritmo-acelerado-1-37-grados-mas-2025/1412977161" target="_blank" rel="noopener" aria-label="La Tierra acumula calor a un “ritmo acelerado” con 1,37 grados más en 2025 - Servimedia">
+        <img src="https://www.servimedia.es/sites/default/files/noticias/img-servimedia-default.png" alt="La Tierra acumula calor a un “ritmo acelerado” con 1,37 grados más en 2025 - Servimedia" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Cambio Climático</div>
+        <h3><a href="https://www.servimedia.es/noticias/tierra-acumula-calor-ritmo-acelerado-1-37-grados-mas-2025/1412977161" target="_blank" rel="noopener">La Tierra acumula calor a un “ritmo acelerado” con 1,37 grados más en 2025 - Servimedia</a></h3>
+        <p>... Acuerdo de París para evitar los peores impactos del cambio climático. Acceso clientes. Para acceder a la mayoría de las noticias, debes ser ...</p>
+        <div class="meta">11 jun 2026 · servimedia.es</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Minerales</div>
-      <h3><a href="https://www.cronista.com/economia-politica/el-nuevo-sector-estrella-la-produccion-trepo-60-y-entra-al-podio-de-principales-exportaciones/" target="_blank" rel="noopener">El nuevo sector estrella: la producción trepó 60% y entra al podio de principales exportaciones</a></h3>
-      <p>... litio. En el informe de índice de producción minero que publicó el Indec se observa que en abril la producción de carbonato de litio fue de 11.466 ...</p>
-      <div class="meta">11 jun 2026 · cronista.com</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://www.cronista.com/economia-politica/el-nuevo-sector-estrella-la-produccion-trepo-60-y-entra-al-podio-de-principales-exportaciones/" target="_blank" rel="noopener" aria-label="El nuevo sector estrella: la producción trepó 60% y entra al podio de principales exportaciones">
+        <img src="https://www.cronista.com/resizer/v2/KDM6Z6P2KJE3VEQMI53TM5LFKE.jpg?auth=1b07eda17457f8d699cb6c865f5868a6ca5b4dbc9ee22006ce7163ce8e5d32c7&amp;height=630&amp;width=1200&amp;quality=70&amp;smart=true" alt="El nuevo sector estrella: la producción trepó 60% y entra al podio de principales exportaciones" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Minerales</div>
+        <h3><a href="https://www.cronista.com/economia-politica/el-nuevo-sector-estrella-la-produccion-trepo-60-y-entra-al-podio-de-principales-exportaciones/" target="_blank" rel="noopener">El nuevo sector estrella: la producción trepó 60% y entra al podio de principales exportaciones</a></h3>
+        <p>... litio. En el informe de índice de producción minero que publicó el Indec se observa que en abril la producción de carbonato de litio fue de 11.466 ...</p>
+        <div class="meta">11 jun 2026 · cronista.com</div>
+      </div>
     </article>
 
-    <article class="latest-item">
-      <div class="latest-item__kicker">Cambio Climático</div>
-      <h3><a href="https://www.cope.es/emisoras/comunidad-valenciana/alicante-provincia/alicante/noticias/inteligencia-artificial-destapa-brecha-climatica-mundial-paises-ricos-pobres-20260611_3381906.amp.html" target="_blank" rel="noopener">La inteligencia artificial destapa la brecha climática mundial entre países ricos y pobres</a></h3>
-      <p>... Acuerdo de París. Para ello, se han utilizado modelos avanzados de inteligencia artificial generativa capaces de identificar las conexiones entre ...</p>
-      <div class="meta">11 jun 2026 · cope.es</div>
+    <article class="latest-item latest-item--media">
+      <a class="latest-item__thumb" href="https://www.cope.es/emisoras/comunidad-valenciana/alicante-provincia/alicante/noticias/inteligencia-artificial-destapa-brecha-climatica-mundial-paises-ricos-pobres-20260611_3381906.amp.html" target="_blank" rel="noopener" aria-label="La inteligencia artificial destapa la brecha climática mundial entre países ricos y pobres">
+        <img src="data:image/svg+xml,%0A%20%20%20%20%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%201280%20720%27%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%231c2535%27/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2755%25%27%20stop-color%3D%27%232d6a4f%27/%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23e05535%27/%3E%0A%20%20%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%20%20%3C/defs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%271280%27%20height%3D%27720%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27145%27%20font-family%3D%27Arial%2C%20sans-serif%27%20font-size%3D%2740%27%20fill%3D%27rgba%28255%2C255%2C255%2C.78%29%27%3ENoticias%20del%20Sector%3C/text%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27285%27%20font-family%3D%27Georgia%2C%20serif%27%20font-size%3D%2768%27%20fill%3D%27%23fff%27%3ECambio%20Clim%C3%A1tico%3C/text%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2780%27%20y%3D%27385%27%20font-family%3D%27Arial%2C%20sans-serif%27%20font-size%3D%2734%27%20fill%3D%27rgba%28255%2C255%2C255%2C.84%29%27%3ELa%20inteligencia%20artificial%20destapa%20la%20brecha%20clim%C3%A1tica%20mundial%E2%80%A6%3C/text%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="La inteligencia artificial destapa la brecha climática mundial entre países ricos y pobres" loading="lazy">
+      </a>
+      <div class="latest-item__body">
+        <div class="latest-item__kicker">Cambio Climático</div>
+        <h3><a href="https://www.cope.es/emisoras/comunidad-valenciana/alicante-provincia/alicante/noticias/inteligencia-artificial-destapa-brecha-climatica-mundial-paises-ricos-pobres-20260611_3381906.amp.html" target="_blank" rel="noopener">La inteligencia artificial destapa la brecha climática mundial entre países ricos y pobres</a></h3>
+        <p>... Acuerdo de París. Para ello, se han utilizado modelos avanzados de inteligencia artificial generativa capaces de identificar las conexiones entre ...</p>
+        <div class="meta">11 jun 2026 · cope.es</div>
+      </div>
     </article>
       
       
